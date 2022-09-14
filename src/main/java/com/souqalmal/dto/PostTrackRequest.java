@@ -1,6 +1,6 @@
 package com.souqalmal.dto;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotBlank;
 
-public record PostTrackRequest(@NotEmpty(message = "input cannot be blank") String input) {
+public record PostTrackRequest(@NotBlank(message = "input cannot be blank") String input) {
 }
