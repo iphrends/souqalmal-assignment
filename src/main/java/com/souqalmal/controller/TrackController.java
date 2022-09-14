@@ -1,6 +1,7 @@
 package com.souqalmal.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -29,7 +30,16 @@ public class TrackController {
     }
 
     @GetMapping("/getHistory")
-    public String getHistory() {
-        return "null";
+    public List<String> getHistory() {
+        if (trackService.getData().size() < 10) {
+            return trackService.getData();
+        }
+
+        return trackService.getData().subList(0, 10);
+    }
+
+    @GetMapping("/clear")
+    public void clear() {
+        trackService.clear();
     }
 }

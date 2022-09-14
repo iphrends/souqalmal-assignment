@@ -1,19 +1,18 @@
 package com.souqalmal.dao;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class InputData {
-    private List<String> data;
+    private LinkedList<String> data;
 
     public InputData() {
-        data = new ArrayList<>();
+        data = new LinkedList<>();
     }
 
-    public List<String> getData() {
+    public LinkedList<String> getData() {
         return data;
     }
 
